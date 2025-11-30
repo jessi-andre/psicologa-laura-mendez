@@ -271,9 +271,19 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(247, 244, 239, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(224, 216, 204, 0.6);
+  background: var(--color-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .header {
+  background: var(--color-bg-alt);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Compensar altura del header fijo al hacer scroll a secciones */
+html {
+  scroll-padding-top: 80px;
 }
 
 .header-inner {
@@ -511,6 +521,12 @@ body {
 .section {
   padding: 3.5rem 0;
   background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
 }
 
 /* Separador sutil entre secciones consecutivas */
