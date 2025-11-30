@@ -116,7 +116,12 @@
         <div class="logo">
           <a href="#inicio" class="logo-text">Laura Méndez · Psicóloga</a>
         </div>
-        <div class="nav-wrapper">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-wrapper" id="navWrapper">
           <nav class="nav">
             <a href="#sobre-mi">Sobre mí</a>
             <a href="#servicios">Servicios</a>
@@ -510,6 +515,24 @@
 
     <script src="script.js"></script>
     <script>
+      // Menú hamburguesa mobile
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const navWrapper = document.getElementById('navWrapper');
+      const navLinks = document.querySelectorAll('.nav a');
+
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navWrapper.classList.toggle('active');
+      });
+
+      // Cerrar menú al hacer click en un link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navWrapper.classList.remove('active');
+        });
+      });
+
       // Modo oscuro/claro
       const themeToggle = document.getElementById('themeToggle');
       const themeIcon = document.getElementById('themeIcon');
