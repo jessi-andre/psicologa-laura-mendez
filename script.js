@@ -576,4 +576,57 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statsSection) {
     statsObserver.observe(statsSection);
   }
+
+  // MENÚ MÓVIL
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navWrapper = document.getElementById('navWrapper');
+  const navLinks = document.querySelectorAll('.nav a');
+
+  if (mobileMenuToggle && navWrapper) {
+    // Toggle del menú
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      navWrapper.classList.toggle('active');
+      // Prevenir scroll cuando el menú está abierto
+      document.body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navWrapper.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Cerrar menú al hacer click fuera
+    navWrapper.addEventListener('click', (e) => {
+      if (e.target === navWrapper) {
+        mobileMenuToggle.classList.remove('active');
+        navWrapper.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // TEMA OSCURO/CLARO
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  
+  // Cargar tema guardado
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+  }
 });
