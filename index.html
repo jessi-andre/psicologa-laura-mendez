@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laura Méndez · Psicóloga | Terapia Online</title>
+    <meta name="description" content="Psicóloga especializada en acompañamiento emocional, ansiedad y autoconocimiento. Sesiones online cálidas y profesionales. Primera consulta sin costo." />
+    <meta name="keywords" content="psicóloga, terapia online, ansiedad, acompañamiento emocional, psicología" />
+    <meta name="author" content="Laura Méndez" />
+    <meta property="og:title" content="Laura Méndez · Psicóloga" />
+    <meta property="og:description" content="Acompañamiento psicológico cálido y profesional para atravesar ansiedad, cambios vitales y emociones intensas." />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://lauraméndez.com" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%238b7aa3' opacity='0.2'/><circle cx='50' cy='50' r='45' fill='none' stroke='%238b7aa3' stroke-width='2'/><path d='M50 20 Q60 30 60 40 Q60 50 50 55 Q40 50 40 40 Q40 30 50 20' fill='%238b7aa3'/><circle cx='42' cy='65' r='3' fill='%238b7aa3'/><circle cx='58' cy='65' r='3' fill='%238b7aa3'/><path d='M45 72 Q50 75 55 72' stroke='%238b7aa3' stroke-width='2' fill='none'/></svg>" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Tipografías Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Google Analytics -->
+    <!-- Reemplaza 'G-XXXXXXXXXX' con tu ID de Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Schema.org Markup para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://lauramendez.com",
+      "name": "Laura Méndez - Psicóloga",
+      "description": "Psicóloga especializada en acompañamiento emocional, ansiedad y autoconocimiento. Sesiones online cálidas y profesionales.",
+      "url": "https://lauramendez.com",
+      "telephone": "+56900000000",
+      "email": "laura@psicologia.com",
+      "image": "https://lauramendez.com/img/laura.jpg",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CL",
+        "addressLocality": "Santiago"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.4489",
+        "longitude": "-70.6693"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47"
+      },
+      "sameAs": [
+        "https://www.instagram.com/lauramendez.psi",
+        "https://www.linkedin.com/in/lauramendez"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Laura Méndez",
+        "jobTitle": "Psicóloga",
+        "description": "Psicóloga especializada en bienestar emocional y acompañamiento en momentos de cambio.",
+        "url": "https://lauramendez.com"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Psicología",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sesiones individuales online",
+              "description": "Encuentros semanales o quincenales para trabajar ansiedad, autoestima, vínculos o procesos de cambio."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sesión única de claridad",
+              "description": "Un espacio puntual para ordenar una situación específica y salir con más claridad."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Acompañamiento intensivo 1 mes",
+              "description": "Un mes de trabajo más cercano para momentos de mayor intensidad emocional."
+            }
+          }
+        ]
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo">
+          <a href="#inicio" class="logo-text">Laura Méndez · Psicóloga</a>
+        </div>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+          <button class="theme-switch" id="themeToggle" aria-label="Modo oscuro" title="Cambiar modo">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero fade-in" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-text slide-in-left">
+            <p class="eyebrow">Psicología & Acompañamiento emocional</p>
+            <h1>Un espacio para sanar y volver a vos.</h1>
+            <p class="hero-subtitle">
+              Acompañamiento psicológico cálido, humano y profesional para
+              atravesar ansiedad, cambios vitales y emociones intensas con más
+              calma y claridad.
+            </p>
+            <div class="hero-actions">
+              <a
+                href="https://wa.me/56900000000"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                Agendar sesión
+              </a>
+              <a href="#sobre-mi" class="btn btn-ghost">
+                Conocer más
+              </a>
+            </div>
+            <p class="hero-note">
+              Sesiones online · Agenda abierta · Primera conversación sin costo.
+            </p>
+          </div>
+
+          <div class="hero-card slide-in-right">
+            <div class="hero-card-badge">Citas online</div>
+            <h2>Sentirte acompañada también es una decisión.</h2>
+            <p>
+              No tenés que poder con todo sola. Creamos juntas un espacio seguro
+              para poner en palabras lo que te pasa y encontrar nuevas
+              herramientas.
+            </p>
+            <ul class="hero-list">
+              <li>Ansiedad y estrés</li>
+              <li>Autoconocimiento y límites sanos</li>
+              <li>Procesos de cambio y cierre de ciclos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE MÍ -->
+      <section class="section fade-in" id="sobre-mi">
+        <div class="container about-grid">
+          <div class="about-text slide-in-left">
+            <h2>Sobre mí</h2>
+            <p>
+              Soy <strong>Laura Méndez</strong>, psicóloga especializada en
+              bienestar emocional y acompañamiento en momentos de cambio.
+            </p>
+            <p>
+              Trabajo desde un enfoque humano, cercano y respetuoso. No creo en
+              recetas mágicas, sino en procesos honestos donde puedas habitar lo
+              que sentís sin juicio y construir nuevas formas de relacionarte
+              con vos misma y con los demás.
+            </p>
+            <p>
+              En sesión vas a encontrar un espacio cálido, con estructura, pero
+              donde lo más importante siempre va a ser tu ritmo, tu historia y
+              tu forma única de transitar esto que te pasa.
+            </p>
+          </div>
+          <div class="about-image slide-in-right">
+            <img src="img/laura.jpg" alt="Laura Méndez, Psicóloga" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ESTADÍSTICAS -->
+      <section class="section stats-section fade-in">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-target="200">0</div>
+              <div class="stat-label">Pacientes acompañadas</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="7">0</div>
+              <div class="stat-label">Años de experiencia</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="95">0</div>
+              <div class="stat-label">% Satisfacción</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="1500">0</div>
+              <div class="stat-label">Sesiones realizadas</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section class="section section-alt fade-in" id="servicios">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Cómo puedo acompañarte</p>
+            <h2>Servicios</h2>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card scale-in">
+              <h3>Sesiones individuales online</h3>
+              <p>
+                Encuentros semanales o quincenales para trabajar lo que estás
+                atravesando hoy: ansiedad, angustia, autoestima, vínculos o
+                procesos de cambio.
+              </p>
+              <ul class="card-list">
+                <li>Sesiones de 50 minutos</li>
+                <li>Modalidad online (Zoom / Meet)</li>
+                <li>Seguimiento personalizado</li>
+              </ul>
+              <p class="card-tag">Proceso continuo · Ritmo a tu medida</p>
+            </article>
+
+            <article class="card scale-in">
+              <h3>Sesión única de claridad</h3>
+              <p>
+                Un espacio puntual para ordenar una situación específica,
+                comprender mejor lo que sentís y salir con más claridad y
+                perspectiva.
+              </p>
+              <ul class="card-list">
+                <li>Sesión de 75 minutos</li>
+                <li>Ejercicios concretos para después</li>
+                <li>Recomendaciones personalizadas</li>
+              </ul>
+              <p class="card-tag">Ideal para decisiones y cierres de ciclo</p>
+            </article>
+
+            <article class="card scale-in">
+              <h3>Acompañamiento intensivo 1 mes</h3>
+              <p>
+                Un mes de trabajo más cercano para momentos de mayor intensidad
+                emocional, con contención y seguimiento extra.
+              </p>
+              <ul class="card-list">
+                <li>Sesiones semanales</li>
+                <li>Material de apoyo complementario</li>
+                <li>Contacto acotado entre sesiones</li>
+              </ul>
+              <p class="card-tag">Para transitar procesos sensibles</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIOS -->
+      <section class="section fade-in" id="testimonios">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Lo que dicen del proceso</p>
+            <h2>Testimonios</h2>
+          </div>
+
+          <div class="testimonials-carousel">
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Trabajar con Laura me ayudó a poner en palabras cosas que venía
+                cargando hace años. Hoy me siento más liviana, con más recursos y
+                menos culpa por lo que siento."
+              </p>
+              <p class="testimonial-name">María, 34 años</p>
+            </div>
+
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Las sesiones con Laura fueron un antes y un después. Me enseñó
+                a reconocer mis patrones y a tratarme con compasión. Recomiendo
+                su acompañamiento a todas mis amigas."
+              </p>
+              <p class="testimonial-name">Sofía, 28 años</p>
+            </div>
+
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Nunca pensé que sesiones online podrían ser tan efectivas.
+                Laura crea un espacio donde realmente se siente que te importas.
+                Cambió mi relación conmigo misma."
+              </p>
+              <p class="testimonial-name">Martina, 41 años</p>
+            </div>
+
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Llegué con ansiedad y sin herramientas. Ahora tengo un kit
+                completo de estrategias y, lo más importante, entiendo qué me
+                pasa. Eso me devolvió la paz."
+              </p>
+              <p class="testimonial-name">Carolina, 31 años</p>
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+            <button class="carousel-btn next" aria-label="Siguiente">❯</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALENDARIO DE CITAS -->
+      <section class="section fade-in" id="agenda">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Disponibilidad</p>
+            <h2>Agenda tu sesión</h2>
+          </div>
+
+          <div class="calendar-container">
+            <div class="calendar-wrapper">
+              <div class="calendar-header">
+                <button id="prevMonth" class="calendar-nav-btn">❮</button>
+                <h3 id="monthYear"></h3>
+                <button id="nextMonth" class="calendar-nav-btn">❯</button>
+              </div>
+              <div class="calendar-grid" id="calendar"></div>
+            </div>
+
+            <div class="time-slots">
+              <h3>Horarios disponibles</h3>
+              <p id="selectedDate" class="selected-date">Selecciona una fecha</p>
+              <div class="slots-grid" id="timeSlots">
+                <p class="no-slots">Elige una fecha para ver horarios</p>
+              </div>
+              <div class="email-box" id="emailBox" style="display: none;">
+                <label for="bookingName" class="email-label">Tu nombre</label>
+                <input type="text" id="bookingName" class="email-input" placeholder="Nombre completo" aria-label="Nombre para la reserva" />
+                <label for="bookingEmail" class="email-label" style="margin-top: 0.6rem;">¿Te envío la confirmación por correo?</label>
+                <input type="email" id="bookingEmail" class="email-input" placeholder="tu@email.com" aria-label="Correo electrónico para confirmar la reserva" />
+                <p class="email-help">Usaré tu correo solo para enviarte la confirmación.</p>
+              </div>
+              <button class="btn btn-primary" id="confirmBooking" style="display: none; width: 100%; margin-top: 1rem;">
+                Confirmar y agendar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ ACCORDION -->
+      <section class="section fade-in" id="faq">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Preguntas frecuentes</p>
+            <h2>Dudas comunes</h2>
+          </div>
+
+          <div class="faq-wrapper">
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Cómo son las sesiones online?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Las sesiones son por videollamada (Zoom o Google Meet), en un horario acordado. Duran 50 minutos y funcionan igual que una sesión presencial: con la misma confidencialidad, estructura y calidez.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Cuánto dura un proceso terapéutico?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Depende de lo que necesites trabajar. Algunas personas vienen por algo puntual (3-6 meses), otras sostienen un proceso más largo. Lo importante es que siempre respetamos tu ritmo y tus tiempos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Qué pasa si necesito cancelar o reprogramar?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Podés avisar con 24hs de anticipación sin costo. Si es con menos tiempo, se cobra la sesión completa para respetar la agenda. Siempre podemos coordinar por WhatsApp.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Trabajás con obras sociales?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Por el momento trabajo de forma particular. Te entrego factura y comprobante para que puedas gestionar reintegro si tu obra social lo permite.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Desde qué enfoque trabajás?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Trabajo desde un enfoque integrativo, combinando herramientas cognitivo-conductuales, gestalt y perspectiva de género. Siempre adaptado a lo que cada persona necesita.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG PREVIEW -->
+      <section class="section section-alt fade-in" id="blog">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Recursos y reflexiones</p>
+            <h2>Del blog</h2>
+          </div>
+
+          <div class="blog-grid">
+            <article class="blog-card scale-in">
+              <div class="blog-tag">Autoconocimiento</div>
+              <h3>Por qué está bien no estar bien</h3>
+              <p>Normalizar las emociones incómodas es el primer paso para dejar de luchar contra vos misma.</p>
+              <a href="blog-autoconocimiento.html" target="_blank" class="blog-link">Leer más →</a>
+            </article>
+
+            <article class="blog-card scale-in">
+              <div class="blog-tag">Límites</div>
+              <h3>Decir que no sin culpa</h3>
+              <p>Poner límites no es egoísmo. Es una forma de cuidarte y sostener relaciones más sanas.</p>
+              <a href="blog-limites.html" target="_blank" class="blog-link">Leer más →</a>
+            </article>
+
+            <article class="blog-card scale-in">
+              <div class="blog-tag">Ansiedad</div>
+              <h3>Qué hacer cuando todo te desborda</h3>
+              <p>Herramientas simples y concretas para volver al presente cuando la ansiedad te acelera.</p>
+              <a href="blog-ansiedad.html" target="_blank" class="blog-link">Leer más →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO / CTA FINAL -->
+      <section class="section section-alt fade-in" id="contacto">
+        <div class="container cta">
+          <div class="cta-text">
+            <h2>Si esto te resonó, podemos empezar por una conversación.</h2>
+            <p>
+              No hace falta tener todo claro para pedir ayuda. A veces el
+              primer paso es simplemente decir “no quiero seguir sosteniendo
+              esto sola”.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a
+              href="https://wa.me/56900000000"
+              target="_blank"
+              class="btn btn-primary btn-full"
+            >
+              Escribir por WhatsApp
+            </a>
+            <p class="cta-note">
+              Contame brevemente qué estás atravesando y te comparto cómo
+              podríamos trabajar juntas.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2025 · Diseño de ejemplo by Jessi André · Mini Web Express</p>
+        <p class="footer-small">
+          Esta es una web de demo para mostrar el estilo y estructura de las
+          mini webs que diseño. · <a href="politicas-privacidad.html" style="color: var(--color-accent); text-decoration: none;">Políticas de Privacidad</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Modo oscuro/claro
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      function setTheme(dark) {
+        if (dark) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          themeIcon.textContent = '☀️';
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.textContent = '🌙';
+        }
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+      }
+      themeToggle.addEventListener('click', function() {
+        const isDark = document.documentElement.getAttribute('data-theme') !== 'dark';
+        setTheme(isDark);
+      });
+      // Inicializar según preferencia
+      const prefersDark = localStorage.getItem('theme') === 'dark';
+      setTheme(prefersDark);
+
+      // Volver arriba al refrescar
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          window.scrollTo(0, 0);
+        }, 10);
+      });
+    </script>
+  </body>
+</html>
