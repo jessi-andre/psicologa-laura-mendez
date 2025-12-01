@@ -1169,27 +1169,16 @@ html {
     justify-content: center;
     align-items: center;
     padding: 3rem 2rem;
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, visibility 0s 0.4s;
+    display: none;
     z-index: 21;
-    -webkit-overflow-scrolling: touch;
-    pointer-events: none;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   }
 
   [data-theme="dark"] .nav-wrapper {
     background: var(--color-bg-alt);
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
   }
 
   .nav-wrapper.active {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-    pointer-events: auto;
+    display: flex !important;
   }
 
   .nav {
