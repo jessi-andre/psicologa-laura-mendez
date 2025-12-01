@@ -582,35 +582,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const navWrapper = document.getElementById('navWrapper');
   const navLinks = document.querySelectorAll('.nav a');
 
+  console.log('Menú móvil inicializado', { mobileMenuToggle, navWrapper, navLinks: navLinks.length });
+
   if (mobileMenuToggle && navWrapper) {
     // Función para cerrar el menú
     const closeMenu = () => {
+      console.log('Cerrando menú');
       mobileMenuToggle.classList.remove('active');
       navWrapper.classList.remove('active');
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
     };
 
     // Toggle del menú
-    mobileMenuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpening = !navWrapper.classList.contains('active');
+    mobileMenuToggle.addEventListener('click', () => {
+      console.log('Toggle menú clickeado');
+      const isActive = navWrapper.classList.contains('active');
       
-      mobileMenuToggle.classList.toggle('active');
-      navWrapper.classList.toggle('active');
-      
-      // Controlar scroll del body
-      if (isOpening) {
-        document.body.style.overflow = 'hidden';
+      if (isActive) {
+        closeMenu();
       } else {
-        document.body.style.overflow = '';
+        console.log('Abriendo menú');
+        mobileMenuToggle.classList.add('active');
+        navWrapper.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
     });
 
     // Cerrar menú al hacer click en un enlace
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
+        console.log('Link clickeado:', link.textContent);
         closeMenu();
       });
     });
@@ -618,6 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cerrar menú al hacer click fuera
     navWrapper.addEventListener('click', (e) => {
       if (e.target === navWrapper) {
+        console.log('Click fuera del menú');
         closeMenu();
       }
     });
