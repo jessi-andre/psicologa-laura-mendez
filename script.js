@@ -592,37 +592,26 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.width = '';
     };
 
-    // Toggle del menú (con soporte para touch)
-    const toggleMenu = (e) => {
-      e.preventDefault();
+    // Toggle del menú
+    mobileMenuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpening = !navWrapper.classList.contains('active');
       
       mobileMenuToggle.classList.toggle('active');
       navWrapper.classList.toggle('active');
       
-      // Solo prevenir scroll del body cuando el menú está abierto
+      // Controlar scroll del body
       if (isOpening) {
         document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
       } else {
         document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
       }
-    };
+    });
 
-    mobileMenuToggle.addEventListener('click', toggleMenu);
-    mobileMenuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
-
-    // Cerrar menú al hacer click en un enlace (primero cerrar, luego dejar que navegue)
+    // Cerrar menú al hacer click en un enlace
     navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        // Cerrar el menú sin prevenir la navegación
-        setTimeout(() => {
-          closeMenu();
-        }, 100);
+      link.addEventListener('click', () => {
+        closeMenu();
       });
     });
 
@@ -632,26 +621,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
       }
     });
-
-    // Cerrar menú al hacer swipe/scroll en el fondo
-    let startY = 0;
-    navWrapper.addEventListener('touchstart', (e) => {
-      if (e.target === navWrapper) {
-        startY = e.touches[0].clientY;
-      }
-    }, { passive: true });
-
-    navWrapper.addEventListener('touchmove', (e) => {
-      if (e.target === navWrapper && navWrapper.classList.contains('active')) {
-        const currentY = e.touches[0].clientY;
-        const diff = Math.abs(currentY - startY);
-        
-        // Si hay movimiento significativo, cerrar menú
-        if (diff > 30) {
-          closeMenu();
-        }
-      }
-    }, { passive: true });
   }
 
   // TEMA OSCURO/CLARO
