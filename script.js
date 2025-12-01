@@ -583,31 +583,69 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav a');
 
   if (mobileMenuToggle && navWrapper) {
-    // Toggle del menú
-    mobileMenuToggle.addEventListener('click', () => {
+    // Función para cerrar el menú
+    const closeMenu = () => {
+      mobileMenuToggle.classList.remove('active');
+      navWrapper.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    // Toggle del menú (con soporte para touch)
+    const toggleMenu = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpening = !navWrapper.classList.contains('active');
+      
       mobileMenuToggle.classList.toggle('active');
       navWrapper.classList.toggle('active');
-      // Prevenir scroll cuando el menú está abierto
-      document.body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
-    });
+      
+      // Solo prevenir scroll del body, no del menú
+      if (isOpening) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+      }
+    };
+
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+    mobileMenuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
 
     // Cerrar menú al hacer click en un enlace
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        navWrapper.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMenu);
+      link.addEventListener('touchend', closeMenu);
     });
 
     // Cerrar menú al hacer click fuera
     navWrapper.addEventListener('click', (e) => {
       if (e.target === navWrapper) {
-        mobileMenuToggle.classList.remove('active');
-        navWrapper.classList.remove('active');
-        document.body.style.overflow = '';
+        closeMenu();
       }
     });
+
+    // Cerrar menú al hacer scroll/swipe en el wrapper
+    let startY = 0;
+    navWrapper.addEventListener('touchstart', (e) => {
+      if (e.target === navWrapper) {
+        startY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    navWrapper.addEventListener('touchmove', (e) => {
+      if (e.target === navWrapper && navWrapper.classList.contains('active')) {
+        const currentY = e.touches[0].clientY;
+        const diff = Math.abs(currentY - startY);
+        
+        // Si hay movimiento significativo, cerrar menú
+        if (diff > 30) {
+          closeMenu();
+        }
+      }
+    }, { passive: true });
   }
 
   // TEMA OSCURO/CLARO
