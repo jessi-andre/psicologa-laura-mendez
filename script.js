@@ -616,10 +616,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuToggle.addEventListener('click', toggleMenu);
     mobileMenuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
 
-    // Cerrar menú al hacer click en un enlace
+    // Cerrar menú al hacer click en un enlace (primero cerrar, luego dejar que navegue)
     navLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-      link.addEventListener('touchend', closeMenu);
+      link.addEventListener('click', (e) => {
+        // Cerrar el menú sin prevenir la navegación
+        setTimeout(() => {
+          closeMenu();
+        }, 100);
+      });
     });
 
     // Cerrar menú al hacer click fuera
