@@ -588,6 +588,8 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenuToggle.classList.remove('active');
       navWrapper.classList.remove('active');
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     };
 
     // Toggle del menú (con soporte para touch)
@@ -599,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenuToggle.classList.toggle('active');
       navWrapper.classList.toggle('active');
       
-      // Solo prevenir scroll del body, no del menú
+      // Solo prevenir scroll del body cuando el menú está abierto
       if (isOpening) {
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
@@ -627,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Cerrar menú al hacer scroll/swipe en el wrapper
+    // Cerrar menú al hacer swipe/scroll en el fondo
     let startY = 0;
     navWrapper.addEventListener('touchstart', (e) => {
       if (e.target === navWrapper) {
