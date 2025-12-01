@@ -582,30 +582,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuWrapper = document.getElementById('navWrapper');
   const menuLinks = document.querySelectorAll('.nav a');
   
-  console.log('Inicializando menú móvil...', { menuBtn, menuWrapper, linksCount: menuLinks.length });
-  
   if (menuBtn && menuWrapper) {
-    menuBtn.addEventListener('click', function(e) {
-      console.log('Click en botón menú');
+    menuBtn.addEventListener('click', function() {
       const isOpen = menuWrapper.classList.contains('active');
-      console.log('Estado actual:', isOpen ? 'abierto' : 'cerrado');
       
       if (isOpen) {
         menuBtn.classList.remove('active');
         menuWrapper.classList.remove('active');
         document.body.style.overflow = '';
-        console.log('Menú cerrado');
       } else {
         menuBtn.classList.add('active');
         menuWrapper.classList.add('active');
         document.body.style.overflow = 'hidden';
-        console.log('Menú abierto');
       }
     });
     
     menuLinks.forEach(function(link) {
       link.addEventListener('click', function() {
-        console.log('Click en enlace del menú');
         menuBtn.classList.remove('active');
         menuWrapper.classList.remove('active');
         document.body.style.overflow = '';
@@ -614,42 +607,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
     menuWrapper.addEventListener('click', function(e) {
       if (e.target === menuWrapper) {
-        console.log('Click en fondo del menú');
         menuBtn.classList.remove('active');
         menuWrapper.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
-    
-    console.log('Menú móvil inicializado correctamente');
-  } else {
-    console.error('NO se encontraron elementos del menú!');
   }
 
   // TEMA OSCURO/CLARO
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
   
-  console.log('Inicializando tema oscuro...', { themeToggle, themeIcon });
-  
   // Cargar tema guardado
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
-  if (themeIcon) themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      console.log('Click en botón de tema');
       const currentTheme = document.documentElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-      console.log('Tema cambiado a:', newTheme);
     });
-    console.log('Tema oscuro inicializado correctamente');
-  } else {
-    console.error('NO se encontró botón de tema!');
   }
 });
